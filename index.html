@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/style/estilos.css">
+    <link rel="shortcut icon" href="Assets/logo/icono_logo.png" type="image/x-icon">
+    <title>AlwaysFull</title>
+</head>
+<body>
+
+    <header>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+        <!-- Lista del carrito -->
+        <div id="cart">
+            <h3>Tu pedido</h3>
+            <div id="cart-items"></div>
+            <p><strong>Total:</strong> USD <span id="cart-total">0</span></p>
+            <button onclick="sendToWhatsApp()">Enviar por WhatsApp</button>
+        </div>
+
+    </header>
+    <main>
+        <div class="principal">
+        <img src="./Assets/img/logo_main.png" alt="logo_main">
+            <a href="#productos">Ver productos</a>
+        </div>
+
+        <div>
+            <h3> metodos de pago: USD - $ - Transferencia</h3>
+        </div>
+
+    </main>
+
+    <section class="play5">
+        <video autoplay muted loop playsinline class="play">
+            <source src="./Assets/videos/play5.mp4" type="video/mp4">
+        </video>
+
+    </section>
+
+    <section class="productos" id="productos">
+        <h4>nuestros productos</h4>
+        <div><img src="./Assets/img/play+1control.png" alt="play+1control"><h5>PS5 Slim Digital con Joystick</h5>
+            <p>USD 540 </p>
+        <button onclick="addToCart('PS5 Slim Digital con Joystick', 540)">Agregar</button>
+    </div>
+        <div><img src="./Assets/img/play+2control.png" alt="play+2control"><h5>PS5 Slim Digital con 2 Joystick</h5>
+            <p>USD 640</p>
+        <button onclick="addToCart('PS5 Slim Digital con 2 Joystick', 640)">Agregar</button>
+    </div>
+        <div><img src="./Assets/img/playlectora+1control.png" alt="playlectora+1control"><h5>PS5 Fisica con Lectora con Joystick</h5>
+            <p>USD 640</p>
+        <button onclick="addToCart('PS5 Fisica con Lectora', 640)">Agregar</button>
+    </div>
+        <div><img src="./Assets/img/control.png" alt="control"><h5>Joystick PS5</h5>
+            <p>USD 110</p>
+        <button onclick="addToCart('Joystick PS5', 110)">Agregar</button>
+    </div>
+
+    </section>
+
+    <section class="imagen_boton">
+        <img src="./Assets/img/botones_imagen.png" alt="botones_imagen">
+    </section>
+
+    <section class="formas_de_pago">
+        <h6>metodos de pago</h6>
+        <p>USD</p>
+        <p>$</p>
+        <p>Transferencia</p>
+    </section>
+    <section class="whatsapp">
+        <a href="https://wa.me/5491138070685">
+            <img src="./Assets/img/whatsapp.png" alt="whatsapp"></a>
+    </section>
+
+    <footer>
+        <a href="https://www.instagram.com/alwaysfull.zs?igsh=aWt4ODR6dGozbTAw">
+            <img src="./Assets/img/Instagram.png" alt="instagram"></a>
+    </footer>
+
+        <script src="./Assets/javascript/carrito.js"></script>
+    
+</body>
+</html>
