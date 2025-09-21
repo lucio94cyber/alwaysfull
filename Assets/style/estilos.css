@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+* {
+  font-family: "Orbitron";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../img/fondo_de_pantalla.png);
+}
+
+header {
+  background: linear-gradient(135deg, #333333, #009926, #00ff40);
+  background-position: center;
+  background-size: 300% 300%;
+  animation: movimiento 2s ease-in-out infinite alternate;
+}
+
+@keyframes movimiento {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 50% 100%;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */

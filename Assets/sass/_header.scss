@@ -1,0 +1,15 @@
+@use "variables" as v;
+
+header{
+    background: linear-gradient(135deg,#333333, #009926, #00ff40);
+    background-position: center;
+    background-size: 300% 300%;
+    animation: movimiento 2s ease-in-out infinite alternate;
+    
+}
+@keyframes movimiento{
+    from{
+        background-position: 0% 50%;}
+    to{
+        background-position: 50% 100%;}
+    }
