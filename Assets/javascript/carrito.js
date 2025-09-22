@@ -1,13 +1,24 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let toastTimer = null;
 
 function toggleCart() {
     document.getElementById("cart").classList.toggle("show");
+}
+
+function showToast(message) {
+    const el = document.getElementById("toast");
+    el.textContent = message;
+    el.classList.add("show");
+
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove("show"), 2000);
 }
 
 function addToCart(name, price) {
     cart.push({ name, price });
     saveCart();
     updateCart();
+    showToast(`${name} agregado al carrito ✅`);
 }
 
 function saveCart() {

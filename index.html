@@ -28,7 +28,7 @@
             <a href="#productos">Ver productos</a>
         </div>
 
-        <div>
+        <div class="pagos">
             <h3> metodos de pago: USD - $ - Transferencia</h3>
         </div>
 
@@ -43,19 +43,19 @@
 
     <section class="productos" id="productos">
         <h4>nuestros productos</h4>
-        <div><img src="./Assets/img/play+1control.png" alt="play+1control"><h5>PS5 Slim Digital con Joystick</h5>
+        <div class="productos1"><img src="./Assets/img/play+1control.png" alt="play+1control"><h5>PS5 Slim Digital con Joystick</h5>
             <p>USD 540 </p>
         <button onclick="addToCart('PS5 Slim Digital con Joystick', 540)">Agregar</button>
     </div>
-        <div><img src="./Assets/img/play+2control.png" alt="play+2control"><h5>PS5 Slim Digital con 2 Joystick</h5>
+        <div class="productos1"><img src="./Assets/img/play+2control.png" alt="play+2control"><h5>PS5 Slim Digital con 2 Joystick</h5>
             <p>USD 640</p>
         <button onclick="addToCart('PS5 Slim Digital con 2 Joystick', 640)">Agregar</button>
     </div>
-        <div><img src="./Assets/img/playlectora+1control.png" alt="playlectora+1control"><h5>PS5 Fisica con Lectora con Joystick</h5>
+        <div class="productos1"><img src="./Assets/img/playlectora+1control.png" alt="playlectora+1control"><h5>PS5 Fisica con Lectora con Joystick</h5>
             <p>USD 640</p>
         <button onclick="addToCart('PS5 Fisica con Lectora', 640)">Agregar</button>
     </div>
-        <div><img src="./Assets/img/control.png" alt="control"><h5>Joystick PS5</h5>
+        <div class="productos1"><img src="./Assets/img/control.png" alt="control"><h5>Joystick PS5</h5>
             <p>USD 110</p>
         <button onclick="addToCart('Joystick PS5', 110)">Agregar</button>
     </div>
@@ -67,11 +67,14 @@
     </section>
 
     <section class="formas_de_pago">
+        <div class="pago">
         <h6>metodos de pago</h6>
         <p>USD</p>
         <p>$</p>
         <p>Transferencia</p>
+        </div>
     </section>
+
     <section class="whatsapp">
         <a href="https://wa.me/5491138070685">
             <img src="./Assets/img/whatsapp.png" alt="whatsapp"></a>
@@ -81,10 +84,14 @@
         <video autoplay muted loop playsinline class="play">
             <source src="./Assets/videos/fondo_footer.mp4" type="video/mp4">
             </video>
-
+            <div class="icono_redes">
         <a href="https://www.instagram.com/alwaysfull.zs?igsh=aWt4ODR6dGozbTAw">
-            <img src="./Assets/img/Instagram.png" alt="instagram"></a>
+            <img src="./Assets/img/Instagram.png" alt="instagram">
+        </a>
+        </div>
     </footer>
+    
+    <div id="toast"></div>
 
         <script src="./Assets/javascript/carrito.js"></script>
     

@@ -1,12 +1,68 @@
 @use "variables" as v;
 
 header{
-    background: linear-gradient(135deg,#333333, #009926, #00ff40);
+    background: linear-gradient(135deg,#333333, #009926,#181815, #00ff40, #eaf0ec);
     background-position: center;
     background-size: 300% 300%;
-    animation: movimiento 2s ease-in-out infinite alternate;
-    
+    animation: movimiento 5s ease-in-out infinite alternate;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    .cart-icon{
+        font-size: 1rem;
+        color: white;
+    }
+    div{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        
+        h3{
+            font-size: 1rem;
+            color: white;
+
+        }
+        p{
+            color: white;
+            padding: 10px;
+            font-size: 1rem;
+
+        }
+        button{
+            background-image: url(../img/boton_1.png);
+            background-position: center;
+            background-size: cover;
+            color: white;
+            padding: 7px;
+            font-size: 1rem;
+            font-weight: 900;
+            transition: transform 0.5s ease-in-out;
+            border-radius: 5px;
+            &:hover{
+                background-image: url(../img/boton_2.png);
+                transform: scale(1.1);
+            }
+
+        }
+    }
+       #cart-items {
+      color: white; // todo lo que esté adentro hereda blanco
+
+      .cart-item {
+         span {
+            color: white; // por si algún estilo pisa, aseguramos blanco
+         }
+
+         button {
+            color: red; // ejemplo: la "x" de eliminar en rojo
+         }
+      }
+   }
 }
+
+
 @keyframes movimiento{
     from{
         background-position: 0% 50%;}
