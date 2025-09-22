@@ -226,15 +226,18 @@ main .pagos h3 {
 .productos .productos1 button {
   margin: 0 auto;
   max-width: 150px;
-  background-image: url(../img/boton_1.png);
+  background-image: url(../img/boton_3.png);
   background-position: center;
   background-size: cover;
-  color: white;
+  color: black;
+  font-weight: 800;
   padding: 10px;
   font-size: 1.5rem;
+  border-radius: 15px;
 }
 .productos .productos1 button:hover {
   background-image: url(../img/boton_2.png);
+  color: white;
 }
 
 .imagen_boton {
