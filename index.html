@@ -10,16 +10,21 @@
 <body>
 
     <header>
-        <div class="cart-icon" onclick="toggleCart()">
-            🛒 <span id="cart-count">0</span>
-        </div>
-        <!-- Lista del carrito -->
-        <div id="cart">
-            <h3>Tu pedido</h3>
-            <div id="cart-items"></div>
-            <p><strong>Total:</strong> USD <span id="cart-total">0</span></p>
-            <button onclick="sendToWhatsApp()">Enviar por WhatsApp</button>
-        </div>
+  <div class="cart-header">
+    <div class="cart-icon" onclick="toggleCart()">
+      🛒 <span id="cart-count">0</span>
+      <strong>Tu pedido</strong>
+    </div>
+  </div>
+
+  <!-- Panel desplegable -->
+  <div id="cart" class="cart-items-container">
+    <div id="cart-items"></div>
+    <div class="cart-footer">
+      Total: USD <span id="cart-total">0</span>
+      <button onclick="sendToWhatsApp()">Enviar por WhatsApp</button>
+    </div>
+  </div>
         
     </header>
     <main>

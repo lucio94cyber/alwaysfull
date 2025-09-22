@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 * {
   font-family: "Orbitron";
@@ -42,52 +43,104 @@ header {
   background-size: 300% 300%;
   animation: movimiento 5s ease-in-out infinite alternate;
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  justify-content: space-between;
   align-items: center;
+  padding: 15px 25px;
+  position: relative;
+  /* Ícono del carrito */
 }
 header .cart-icon {
-  font-size: 1rem;
-  color: white;
-}
-header div {
   display: flex;
-  gap: 20px;
   align-items: center;
-}
-header div h3 {
+  gap: 8px;
   font-size: 1rem;
   color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
-header div p {
-  color: white;
-  padding: 10px;
-  font-size: 1rem;
+header .cart-icon span {
+  background: red;
+  border-radius: 50%;
+  padding: 3px 7px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
-header div button {
-  background-image: url(../img/boton_1.png);
-  background-position: center;
-  background-size: cover;
-  color: white;
-  padding: 7px;
-  font-size: 1rem;
-  font-weight: 900;
-  transition: transform 0.5s ease-in-out;
-  border-radius: 5px;
+header {
+  /* Contenedor desplegable para los productos */
 }
-header div button:hover {
-  background-image: url(../img/boton_2.png);
-  transform: scale(1.1);
+header .cart-items-container {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00ff40;
+  border-radius: 10px;
+  padding: 15px;
+  gap: 10px;
+  overflow-y: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+header .cart-items-container.show {
+  display: flex;
+  animation: slideDown 0.3s ease;
 }
 header #cart-items {
-  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+header #cart-items .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1b1b1b;
+  padding: 8px 10px;
+  border-radius: 5px;
 }
 header #cart-items .cart-item span {
   color: white;
+  font-size: 0.9rem;
 }
 header #cart-items .cart-item button {
   color: red;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+header #cart-items .cart-item button:hover {
+  transform: scale(1.2);
+}
+header {
+  /* Footer del carrito con total y botón */
+}
+header .cart-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  font-size: 0.9rem;
+}
+header .cart-footer button {
+  background: #00ff40;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+header .cart-footer button:hover {
+  background: #00cc33;
 }
 
 @keyframes movimiento {
@@ -96,6 +149,16 @@ header #cart-items .cart-item button {
   }
   to {
     background-position: 50% 100%;
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 main {
@@ -120,9 +183,9 @@ main .principal a {
   margin-top: -20px;
   padding: 10px;
   text-decoration: none;
-  color: white;
+  color: rgb(248, 247, 247);
   font-weight: 500;
-  background-image: url(../img/boton_1.png);
+  background-image: url(../img/boton_3.png);
   background-position: center;
   background-size: cover;
   border-radius: 5px;
@@ -142,7 +205,7 @@ main .pagos {
   overflow: hidden;
 }
 main .pagos h3 {
-  color: white;
+  color: rgb(248, 247, 247);
   animation: traslado 5s infinite alternate ease-in-out;
 }
 
@@ -229,15 +292,15 @@ main .pagos h3 {
   background-image: url(../img/boton_3.png);
   background-position: center;
   background-size: cover;
-  color: black;
+  color: rgb(248, 247, 247);
   font-weight: 800;
   padding: 10px;
   font-size: 1.5rem;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 .productos .productos1 button:hover {
   background-image: url(../img/boton_2.png);
-  color: white;
+  color: rgb(236, 234, 234);
 }
 
 .imagen_boton {
