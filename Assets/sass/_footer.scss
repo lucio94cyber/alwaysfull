@@ -8,6 +8,7 @@ footer{
         height: 100px;
         object-fit: cover;
         display: block;
+        pointer-events: none; /* evita que se pueda clickear */
     }
     .icono_redes{
         position: absolute;

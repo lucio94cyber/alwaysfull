@@ -109,6 +109,7 @@ main{
         max-width: 700px;
         width: 100%;
         box-shadow: 0 0 30px black;
+        pointer-events: none; /* evita que se pueda clickear */
 
     }
 }
