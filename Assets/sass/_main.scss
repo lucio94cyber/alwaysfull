@@ -78,6 +78,26 @@ main{
     }
 }
 
+@media (min-width: 320px) and (max-width: 430px){
+    main{
+        .principal{
+            img{
+                width: 70%;
+            }
+
+            a{
+                font-size: 0.8rem;
+            }
+        }
+        .pagos{
+            h3{
+                font-size: 1rem;
+            }
+        }
+    }
+
+}
+
 .play5{
     display: flex;
     justify-content: center;
@@ -91,6 +111,13 @@ main{
         box-shadow: 0 0 30px black;
 
     }
+}
+
+@media (min-width: 320px) and (max-width: 430px){
+.play5{
+    margin: 0;
+    padding: 0;
+}
 }
 
 .productos{
@@ -155,6 +182,34 @@ main{
     }
 }
 
+@media (min-width: 320px) and (max-width: 430px){
+    .productos{
+        h4{
+            font-size: 2rem;
+        }
+    
+    .productos1{
+
+        img{
+            height: 300px;
+
+        }
+        h5{
+            font-size: 1.2rem;
+
+        }
+
+        p{
+            font-weight: 700;
+
+        }
+        button{
+            font-size: 1rem;
+        }
+    }
+}
+}
+
 .imagen_boton{
     display: flex;
     justify-content: center;
@@ -165,6 +220,12 @@ main{
         width: 100%;
         box-shadow: 0 0 10px black;
 
+    }
+}
+
+@media (min-width: 320px) and (max-width: 430px){
+    .imagen_boton{
+        padding: 0px;
     }
 }
 
@@ -182,7 +243,7 @@ main{
         background-color: #eae8ec;
         border-radius: 10px;
         box-shadow: 0 0 10px white;
-        animation: movimientos 1s infinite alternate ease-in-out;
+        animation: movimientos 2s infinite alternate ease-in-out;
     h6{
         text-transform: uppercase;
         font-size: 2rem;
@@ -198,7 +259,24 @@ main{
 
 @keyframes movimientos{
     from{transform: translate(0%, 5%);}
-    to{transform: translate(-5%, 0);}
+    to{transform: translate(-5%, 0%);}
+}
+
+
+@media (min-width: 320px) and (max-width: 430px){
+    .formas_de_pago{
+
+        .pago{
+            width: 250px;
+
+            h6{
+                font-size: 1.5rem;
+            }
+            p{
+                font-size: 1.2rem;
+            }
+        }
+    }
 }
 
 .whatsapp{

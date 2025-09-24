@@ -234,6 +234,17 @@ main .pagos h3 {
     filter: brightness(1);
   }
 }
+@media (min-width: 320px) and (max-width: 430px) {
+  main .principal img {
+    width: 70%;
+  }
+  main .principal a {
+    font-size: 0.8rem;
+  }
+  main .pagos h3 {
+    font-size: 1rem;
+  }
+}
 .play5 {
   display: flex;
   justify-content: center;
@@ -246,6 +257,12 @@ main .pagos h3 {
   box-shadow: 0 0 30px black;
 }
 
+@media (min-width: 320px) and (max-width: 430px) {
+  .play5 {
+    margin: 0;
+    padding: 0;
+  }
+}
 .productos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -303,6 +320,23 @@ main .pagos h3 {
   color: rgb(236, 234, 234);
 }
 
+@media (min-width: 320px) and (max-width: 430px) {
+  .productos h4 {
+    font-size: 2rem;
+  }
+  .productos .productos1 img {
+    height: 300px;
+  }
+  .productos .productos1 h5 {
+    font-size: 1.2rem;
+  }
+  .productos .productos1 p {
+    font-weight: 700;
+  }
+  .productos .productos1 button {
+    font-size: 1rem;
+  }
+}
 .imagen_boton {
   display: flex;
   justify-content: center;
@@ -315,6 +349,11 @@ main .pagos h3 {
   box-shadow: 0 0 10px black;
 }
 
+@media (min-width: 320px) and (max-width: 430px) {
+  .imagen_boton {
+    padding: 0px;
+  }
+}
 .formas_de_pago {
   display: flex;
   flex-direction: column;
@@ -330,7 +369,7 @@ main .pagos h3 {
   background-color: #eae8ec;
   border-radius: 10px;
   box-shadow: 0 0 10px white;
-  animation: movimientos 1s infinite alternate ease-in-out;
+  animation: movimientos 2s infinite alternate ease-in-out;
 }
 .formas_de_pago .pago h6 {
   text-transform: uppercase;
@@ -346,7 +385,18 @@ main .pagos h3 {
     transform: translate(0%, 5%);
   }
   to {
-    transform: translate(-5%, 0);
+    transform: translate(-5%, 0%);
+  }
+}
+@media (min-width: 320px) and (max-width: 430px) {
+  .formas_de_pago .pago {
+    width: 250px;
+  }
+  .formas_de_pago .pago h6 {
+    font-size: 1.5rem;
+  }
+  .formas_de_pago .pago p {
+    font-size: 1.2rem;
   }
 }
 .whatsapp {
