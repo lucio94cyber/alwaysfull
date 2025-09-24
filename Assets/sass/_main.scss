@@ -110,6 +110,8 @@ main{
         width: 100%;
         box-shadow: 0 0 30px black;
         pointer-events: none; /* evita que se pueda clickear */
+        -webkit-touch-callout:none;/* quita menú en iOS - para iphone*/
+        -webkit-user-select: none;/* quita menú en iOS - para iphone*/
 
     }
 }

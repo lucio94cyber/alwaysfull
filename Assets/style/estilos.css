@@ -256,6 +256,8 @@ main .pagos h3 {
   width: 100%;
   box-shadow: 0 0 30px black;
   pointer-events: none; /* evita que se pueda clickear */
+  -webkit-touch-callout: none; /* quita menú en iOS - para iphone*/
+  -webkit-user-select: none; /* quita menú en iOS - para iphone*/
 }
 
 @media (min-width: 320px) and (max-width: 430px) {
@@ -427,6 +429,8 @@ footer video {
   object-fit: cover;
   display: block;
   pointer-events: none; /* evita que se pueda clickear */
+  -webkit-touch-callout: none; /* quita menú en iOS - para iphone*/
+  -webkit-user-select: none; /* quita menú en iOS - para iphone*/
 }
 footer .icono_redes {
   position: absolute;

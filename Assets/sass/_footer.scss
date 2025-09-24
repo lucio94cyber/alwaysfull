@@ -9,6 +9,8 @@ footer{
         object-fit: cover;
         display: block;
         pointer-events: none; /* evita que se pueda clickear */
+        -webkit-touch-callout:none;/* quita menú en iOS - para iphone*/
+        -webkit-user-select: none;/* quita menú en iOS - para iphone*/
     }
     .icono_redes{
         position: absolute;
