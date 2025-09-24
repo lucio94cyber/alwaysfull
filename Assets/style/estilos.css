@@ -255,6 +255,7 @@ main .pagos h3 {
   max-width: 700px;
   width: 100%;
   box-shadow: 0 0 30px black;
+  pointer-events: none; /* evita que se pueda clickear */
 }
 
 @media (min-width: 320px) and (max-width: 430px) {
@@ -425,6 +426,7 @@ footer video {
   height: 100px;
   object-fit: cover;
   display: block;
+  pointer-events: none; /* evita que se pueda clickear */
 }
 footer .icono_redes {
   position: absolute;
