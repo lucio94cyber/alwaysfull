@@ -1,104 +1,695 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/style/estilos.css">
-    <link rel="shortcut icon" href="Assets/logo/icono_logo.png" type="image/x-icon">
-    <title>AlwaysFull</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="AlwaysFull — consolas y accesorios gaming.">
+<meta name="theme-color" content="#050705">
+
+<link rel="icon" href="./Assets/logo/icono_logo.png" type="image/png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./Assets/style/estilos.css">
+
+<title>AlwaysFull | Gaming sin vueltas</title>
 </head>
+
 <body>
 
-    <header>
-  <div class="cart-header">
-    <div class="cart-icon" onclick="toggleCart()">
-      🛒 <span id="cart-count">0</span>
-      <strong>Tu pedido</strong>
-    </div>
-  </div>
+<div class="topbar">
+    <span>ALWAYSFULL</span>
+    <span>Consolas · Joysticks · Gaming</span>
+    <span>Consultá disponibilidad por WhatsApp</span>
+</div>
 
-  <!-- Panel desplegable -->
-  <div id="cart" class="cart-items-container">
-    <div id="cart-items"></div>
-    <div class="cart-footer">
-      Total: USD <span id="cart-total">0</span>
-      <button onclick="sendToWhatsApp()">Enviar por WhatsApp</button>
-    </div>
-  </div>
-        
-    </header>
-    <main>
-        <div class="principal">
-        <img src="./Assets/img/logo_main.png" alt="logo_main">
-            <a href="#productos">Ver productos</a>
-        </div>
+<header>
+    <div class="header-inner">
 
-        <div class="pagos">
-            <h3> metodos de pago: USD - $ - Transferencia</h3>
-        </div>
-
-    </main>
-
-    <section class="play5">
-        <video class="play" autoplay muted loop playsinline webkit-playsinline poster="./Assets/videos/play5.mp4">
-            <source src="./Assets/videos/play5.mp4" type="video/mp4">
-        </video>
-
-    </section>
-
-    <section class="productos" id="productos">
-        <h4>nuestros productos</h4>
-        <div class="productos1"><img src="./Assets/img/play+1control.png" alt="play+1control"><h5>PS5 Slim Digital con Joystick</h5>
-            <p>USD 540 </p>
-        <button onclick="addToCart('PS5 Slim Digital con Joystick', 540)">Agregar</button>
-    </div>
-        <div class="productos1"><img src="./Assets/img/play+2control.png" alt="play+2control"><h5>PS5 Slim Digital con 2 Joystick</h5>
-            <p>USD 640</p>
-        <button onclick="addToCart('PS5 Slim Digital con 2 Joystick', 640)">Agregar</button>
-    </div>
-        <div class="productos1"><img src="./Assets/img/playlectora+1control.png" alt="playlectora+1control"><h5>PS5 Fisica con Lectora con Joystick</h5>
-            <p>USD 640</p>
-        <button onclick="addToCart('PS5 Fisica con Lectora', 640)">Agregar</button>
-    </div>
-        <div class="productos1"><img src="./Assets/img/control.png" alt="control"><h5>Joystick PS5</h5>
-            <p>USD 110</p>
-        <button onclick="addToCart('Joystick PS5', 110)">Agregar</button>
-    </div>
-
-    </section>
-
-    <section class="imagen_boton">
-        <img src="./Assets/img/botones_imagen.png" alt="botones_imagen">
-    </section>
-
-    <section class="formas_de_pago">
-        <div class="pago">
-        <h6>metodos de pago</h6>
-        <p>USD</p>
-        <p>$</p>
-        <p>Transferencia</p>
-        </div>
-    </section>
-
-    <section class="whatsapp">
-        <a href="https://wa.me/5491138070685">
-            <img src="./Assets/img/whatsapp.png" alt="whatsapp"></a>
-    </section>
-
-    <footer>
-        <video class="play" autoplay muted loop playsinline webkit-playsinline poster="./Assets/videos/fondo_footer.mp4">
-            <source src="./Assets/videos/fondo_footer.mp4" type="video/mp4">
-            </video>
-            <div class="icono_redes">
-        <a href="https://www.instagram.com/alwaysfull.zs?igsh=aWt4ODR6dGozbTAw">
-            <img src="./Assets/img/Instagram.png" alt="instagram">
+        <a class="brand" href="#">
+            <img src="./Assets/img/logo_main.png" alt="AlwaysFull">
         </a>
-        </div>
-    </footer>
-    
-    <div id="toast"></div>
 
-    <script src="./Assets/javascript/carrito.js"></script>
-    
+        <nav id="nav">
+            <a href="#productos">Productos</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#pagos">Pagos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <button class="cart-icon" onclick="toggleCart()" aria-label="Abrir pedido">
+            🛒
+            <span id="cart-count">0</span>
+            <strong>Tu pedido</strong>
+        </button>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+            <i></i>
+            <i></i>
+            <i></i>
+        </button>
+
+    </div>
+</header>
+
+
+<!-- CARRITO -->
+
+<div id="cart" class="cart-items-container">
+
+    <div class="cart-backdrop" onclick="toggleCart()"></div>
+
+    <div class="cart-panel">
+
+        <div class="cart-head">
+
+            <div>
+                <small>ALWAYSFULL</small>
+                <h2>Tu pedido</h2>
+            </div>
+
+            <button onclick="toggleCart()">×</button>
+
+        </div>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-footer">
+
+            <div class="total">
+                <span>Total</span>
+                <strong>USD <span id="cart-total">0</span></strong>
+            </div>
+
+            <button onclick="sendToWhatsApp()">
+                Enviar por WhatsApp
+            </button>
+
+            <button class="clear" onclick="clearCart()">
+                Vaciar pedido
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+
+        <span class="eyebrow">
+            GAMING / CONSOLES / ACCESORIOS
+        </span>
+
+        <h1>
+            JUGÁ<br>
+            <em>EN GRANDE.</em>
+        </h1>
+
+        <p>
+            Consolas y accesorios para llevar tu experiencia gaming
+            al siguiente nivel.
+        </p>
+
+        <div class="actions">
+
+            <a class="btn primary" href="#productos">
+                Ver productos <b>↗</b>
+            </a>
+
+            <a
+                class="btn secondary"
+                href="https://wa.me/5491138070685"
+                target="_blank"
+                rel="noopener"
+            >
+                Consultar disponibilidad
+            </a>
+
+        </div>
+
+        <div class="steps">
+
+            <span>
+                <b>01</b>
+                Elegí
+            </span>
+
+            <span>
+                <b>02</b>
+                Armá tu pedido
+            </span>
+
+            <span>
+                <b>03</b>
+                WhatsApp
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-logo">
+
+        <div class="logo-box">
+
+            <img
+                src="./Assets/img/logo_main.png"
+                alt="AlwaysFull"
+            >
+
+            <span>
+                ALWAYS<br>
+                <b>FULL</b>
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TICKER -->
+
+<div class="ticker">
+
+    <div>
+        PS5 <i>✦</i>
+        JOYSTICKS <i>✦</i>
+        GAMING <i>✦</i>
+        ALWAYSFULL <i>✦</i>
+        PS5 <i>✦</i>
+        JOYSTICKS <i>✦</i>
+        GAMING <i>✦</i>
+        ALWAYSFULL <i>✦</i>
+    </div>
+
+</div>
+
+
+<!-- PRODUCTOS -->
+
+<section class="products section" id="productos">
+
+    <div class="heading reveal">
+
+        <div>
+
+            <span class="eyebrow">
+                01 / PRODUCTOS
+            </span>
+
+            <h2>
+                Elegí tu próximo
+                <em>setup.</em>
+            </h2>
+
+        </div>
+
+        <p>
+            Encontrá la opción que mejor se adapta a vos
+            y armá tu pedido en segundos.
+        </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- PRODUCTO 1 -->
+
+        <article class="product-card reveal">
+
+            <div class="product-image">
+
+                <label>PS5</label>
+
+                <img
+                    src="./Assets/img/play+1control.png"
+                    alt="PS5 Slim Digital con Joystick"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <small>CONSOLAS</small>
+
+                <h3>
+                    PS5 Slim Digital
+                </h3>
+
+                <p>
+                    Con 1 joystick
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        USD 540
+                    </strong>
+
+                    <button
+                        onclick="addToCart('PS5 Slim Digital con Joystick',540)"
+                    >
+                        Agregar +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCTO 2 -->
+
+        <article class="product-card reveal">
+
+            <div class="product-image">
+
+                <label>PACK</label>
+
+                <img
+                    src="./Assets/img/play+2control.png"
+                    alt="PS5 Slim Digital con 2 Joystick"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <small>CONSOLAS</small>
+
+                <h3>
+                    PS5 Slim Digital
+                </h3>
+
+                <p>
+                    Con 2 joysticks
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        USD 640
+                    </strong>
+
+                    <button
+                        onclick="addToCart('PS5 Slim Digital con 2 Joystick',640)"
+                    >
+                        Agregar +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCTO 3 -->
+
+        <article class="product-card reveal">
+
+            <div class="product-image">
+
+                <label>LECTORA</label>
+
+                <img
+                    src="./Assets/img/playlectora+1control.png"
+                    alt="PS5 Física con Lectora"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <small>CONSOLAS</small>
+
+                <h3>
+                    PS5 Física
+                </h3>
+
+                <p>
+                    Con lectora + joystick
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        USD 640
+                    </strong>
+
+                    <button
+                        onclick="addToCart('PS5 Física con Lectora',640)"
+                    >
+                        Agregar +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRODUCTO 4 -->
+
+        <article class="product-card reveal">
+
+            <div class="product-image">
+
+                <label>ACC.</label>
+
+                <img
+                    src="./Assets/img/control.png"
+                    alt="Joystick PS5"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <small>ACCESORIOS</small>
+
+                <h3>
+                    Joystick PS5
+                </h3>
+
+                <p>
+                    Sumalo a tu setup
+                </p>
+
+                <div class="product-bottom">
+
+                    <strong>
+                        USD 110
+                    </strong>
+
+                    <button
+                        onclick="addToCart('Joystick PS5',110)"
+                    >
+                        Agregar +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCIA -->
+
+<section class="experience" id="experiencia">
+
+    <div class="experience-grid">
+
+        <div class="experience-image reveal">
+
+            <img
+                src="./Assets/img/botones_imagen.png"
+                alt="AlwaysFull gaming"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="experience-copy reveal">
+
+            <span class="eyebrow">
+                02 / EXPERIENCIA
+            </span>
+
+            <h2>
+                Menos vueltas.<br>
+                <em>Más juego.</em>
+            </h2>
+
+            <p>
+                Encontrá tu equipo, armá tu pedido y hablá
+                directamente con AlwaysFull.
+                Una experiencia simple y pensada para comprar
+                desde cualquier dispositivo.
+            </p>
+
+
+            <div class="list">
+
+                <div>
+
+                    <b>01</b>
+
+                    <span>
+                        <strong>
+                            Elegí tu producto
+                        </strong>
+
+                        <small>
+                            Conocé cada opción y su precio.
+                        </small>
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <b>02</b>
+
+                    <span>
+                        <strong>
+                            Armá tu pedido
+                        </strong>
+
+                        <small>
+                            Tu selección queda guardada.
+                        </small>
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <b>03</b>
+
+                    <span>
+                        <strong>
+                            Confirmá por WhatsApp
+                        </strong>
+
+                        <small>
+                            Coordiná disponibilidad y compra.
+                        </small>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PAGOS -->
+
+<section class="payments section" id="pagos">
+
+    <div class="payment-card reveal">
+
+        <div>
+
+            <span class="eyebrow">
+                03 / PAGOS
+            </span>
+
+            <h2>
+                Elegí cómo
+                <em>pagar.</em>
+            </h2>
+
+            <p>
+                Consultá la modalidad disponible
+                para tu compra.
+            </p>
+
+        </div>
+
+
+        <div class="payment-options">
+
+            <span>USD</span>
+            <span>$</span>
+            <span>Transferencia</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="contacto">
+
+    <div class="reveal">
+
+        <span class="eyebrow">
+            ¿TENÉS UNA DUDA?
+        </span>
+
+        <h2>
+            HABLEMOS<br>
+            <em>DE TU PRÓXIMO JUEGO.</em>
+        </h2>
+
+        <a
+            class="btn primary"
+            href="https://wa.me/5491138070685"
+            target="_blank"
+            rel="noopener"
+        >
+            Hablar por WhatsApp ↗
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <img
+                src="./Assets/img/logo_main.png"
+                alt="AlwaysFull"
+            >
+
+            <p>
+                Gaming. Consolas. Accesorios.<br>
+                Siempre un paso más.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#productos">
+                Productos
+            </a>
+
+            <a href="#experiencia">
+                Experiencia
+            </a>
+
+            <a href="#pagos">
+                Pagos
+            </a>
+
+            <a
+                href="https://wa.me/5491138070685"
+                target="_blank"
+            >
+                WhatsApp
+            </a>
+
+        </div>
+
+
+        <div class="instagram">
+
+            <span>
+                Seguinos
+            </span>
+
+            <a
+                href="https://www.instagram.com/alwaysfull.zs?igsh=aWt4ODR6dGozbTAw"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <img
+                    src="./Assets/img/Instagram.png"
+                    alt="Instagram"
+                >
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 AlwaysFull
+        </span>
+
+        <span>
+            Diseño y desarrollo web · AlwaysHouse
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/5491138070685"
+    target="_blank"
+    aria-label="WhatsApp"
+>
+
+    <img
+        src="./Assets/img/whatsapp.png"
+        alt=""
+    >
+
+</a>
+
+
+<div id="toast"></div>
+
+
+<script src="./Assets/javascript/carrito.js"></script>
+
 </body>
 </html>
